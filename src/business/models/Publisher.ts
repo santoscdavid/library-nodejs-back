@@ -1,4 +1,4 @@
-import { IPublisher } from '@business/interfaces/IPublisher';
+import { IPublisher } from '@business/interfaces/Publishers/IPublisher';
 import {
     Column,
     CreateDateColumn,
