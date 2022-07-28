@@ -1,8 +1,10 @@
 import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import cors from 'cors';
-import router from './controllers/index';
+import router from './routes/index';
 import AppError from '@api/middlewares/AppError';
+import '@data/dataSource/index';
+import '@api/configuration/DependencyInjectionConfig';
 
 const app = express();
 
