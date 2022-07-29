@@ -41,7 +41,7 @@ export default class PublishersController {
             city,
         });
 
-        return response.json(publisher);
+        return response.status(201).json(publisher);
     }
 
     public async update(

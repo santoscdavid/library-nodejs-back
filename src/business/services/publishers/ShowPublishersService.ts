@@ -12,13 +12,13 @@ class ShowPublisherService {
     ) {}
 
     public async execute({ id }: IShowPublisher): Promise<IPublisher> {
-        const product = await this.publishersRepository.findById(id);
+        const publisher = await this.publishersRepository.findById(id);
 
-        if (!product) {
-            throw new AppError('Product not found.');
+        if (!publisher) {
+            throw new AppError('Publisher not found.', 404);
         }
 
-        return product;
+        return publisher;
     }
 }
 

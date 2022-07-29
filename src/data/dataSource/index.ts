@@ -1,7 +1,8 @@
 import { DataSource } from 'typeorm';
 
 import Publisher from '@business/models/Publisher';
-import { CreatePublishers1658922932476 } from '@data/migrations/1658922932476-CreatePublishers';
+
+import { CreatePublisher1659054375194 } from '../migrations/1659054375194-CreatePublisher';
 
 export const dataSource = new DataSource({
     type: 'postgres',
@@ -11,5 +12,5 @@ export const dataSource = new DataSource({
     password: '1234',
     database: 'library-db',
     entities: [Publisher],
-    migrations: { CreatePublishers1658922932476 },
+    migrations: { CreatePublisher1659054375194 },
 });
