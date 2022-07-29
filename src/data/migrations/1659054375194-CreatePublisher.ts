@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreatePublishers1658922932476 implements MigrationInterface {
+export class CreatePublisher1659054375194 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
         await queryRunner.createTable(
@@ -23,10 +23,6 @@ export class CreatePublishers1658922932476 implements MigrationInterface {
                         type: 'varchar',
                     },
                     {
-                        name: 'isDeleted',
-                        type: 'boolean',
-                    },
-                    {
                         name: 'created_at',
                         type: 'timestamp',
                         default: 'now()',
@@ -42,6 +38,6 @@ export class CreatePublishers1658922932476 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable('products');
+        await queryRunner.dropTable('publishers');
     }
 }

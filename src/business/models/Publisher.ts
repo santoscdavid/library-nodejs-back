@@ -17,9 +17,6 @@ class Publisher implements IPublisher {
     @Column()
     city: string;
 
-    @Column()
-    isDeleted: boolean;
-
     @CreateDateColumn()
     created_at: Date;
 

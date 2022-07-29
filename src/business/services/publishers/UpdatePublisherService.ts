@@ -23,7 +23,7 @@ class UpdatePublisherService {
 
         const productExists = await this.publishersRepository.findByName(name);
 
-        if (productExists) {
+        if (productExists && name !== publisher.name) {
             throw new AppError('There is already one product with this name');
         }
 
