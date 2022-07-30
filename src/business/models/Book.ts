@@ -3,13 +3,20 @@ import {
     Column,
     CreateDateColumn,
     Entity,
+    JoinColumn,
+    ManyToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
+import Publisher from './Publisher';
 
 @Entity('books')
 class Book implements IBook {
     @PrimaryGeneratedColumn('uuid')
     id: string;
+
+    @ManyToOne(() => Publisher)
+    @JoinColumn({ name: 'publisher_id' })
+    publisher: Publisher;
 
     @Column()
     name: string;
