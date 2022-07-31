@@ -1,8 +1,8 @@
 import { IPublisher } from '../Publishers/IPublisher';
 
-export interface IBook {
-    id: string;
+export interface ICreateBook {
     publisher: IPublisher;
+    id: string;
     name: string;
     author: string;
     releaseDate: Date;
