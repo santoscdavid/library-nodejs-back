@@ -1,9 +1,9 @@
 import { IPublisher } from '../Publishers/IPublisher';
 
-export interface ICreateBook {
+export interface IRequestCreateBook {
     name: string;
     author: string;
-    publisher: IPublisher;
+    publisher_id: string;
     releaseDate: Date;
     price: number;
     quantity: number;

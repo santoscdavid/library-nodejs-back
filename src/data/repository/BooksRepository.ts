@@ -23,7 +23,11 @@ export class BooksRepository implements IBooksRepository {
         return book;
     }
     public async findAll(): Promise<IBook[]> {
-        const books = await this.ormRepository.find();
+        const books = await this.ormRepository.find({
+            relations: {
+                publisher: true,
+            },
+        });
 
         return books;
     }

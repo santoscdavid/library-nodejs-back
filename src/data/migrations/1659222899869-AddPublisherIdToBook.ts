@@ -19,7 +19,7 @@ export class AddPublisherIdToBook1659222899869 implements MigrationInterface {
         await queryRunner.createForeignKey(
             'books',
             new TableForeignKey({
-                name: 'PublishersBook',
+                name: 'BooksPublisher',
                 columnNames: ['publisher_id'],
                 referencedTableName: 'publishers',
                 referencedColumnNames: ['id'],
@@ -29,7 +29,7 @@ export class AddPublisherIdToBook1659222899869 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropForeignKey('books', 'PublishersBook');
+        await queryRunner.dropForeignKey('books', 'BooksPublisher');
         await queryRunner.dropColumn('books', 'publisher_id');
     }
 }

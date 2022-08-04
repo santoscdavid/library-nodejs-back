@@ -4,7 +4,7 @@ import AppError from '@api/middlewares/AppError';
 import { IDeleteBook } from '@business/interfaces/Books/IDeleteBook';
 
 @injectable()
-class DeletePublisherService {
+class DeleteBookService {
     constructor(
         @inject('BooksRepository')
         private booksRepository: IBooksRepository,
@@ -21,4 +21,4 @@ class DeletePublisherService {
     }
 }
 
-export default DeletePublisherService;
+export default DeleteBookService;

@@ -1,9 +1,9 @@
 import { inject, injectable } from 'tsyringe';
 import { IBooksRepository } from '@business/interfaces/Books/IBooksRepository';
 import { IBook } from '@business/interfaces/Books/IBook';
-import { ICreateBook } from '@business/interfaces/Books/ICreateBook';
 import AppError from '@api/middlewares/AppError';
 import { IPublishersRepository } from '@business/interfaces/Publishers/IPublishersRepository';
+import { IRequestCreateBook } from '@business/interfaces/Books/IRequestCreateBook';
 
 @injectable()
 class CreateBookService {
@@ -22,12 +22,12 @@ class CreateBookService {
         releaseDate,
         price,
         quantity,
-    }: ICreateBook): Promise<IBook> {
+    }: IRequestCreateBook): Promise<IBook> {
         const publisherExists = await this.publishersRepository.findById(
             publisher_id,
         );
 
-        if (publisherExists) {
+        if (!publisherExists) {
             throw new AppError('Publisher not found.', 404);
         }
 
@@ -40,7 +40,7 @@ class CreateBookService {
         const book = await this.booksRepository.create({
             name,
             author,
-            publisher_id,
+            publisher: publisherExists,
             releaseDate,
             price,
             quantity,
