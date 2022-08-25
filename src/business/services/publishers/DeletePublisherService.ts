@@ -14,7 +14,7 @@ class DeletePublisherService {
         const publisher = await this.publishersRepository.findById(id);
 
         if (!publisher) {
-            throw new AppError('Product not found.');
+            throw new AppError('Publisher not found.');
         }
 
         await this.publishersRepository.remove(publisher);

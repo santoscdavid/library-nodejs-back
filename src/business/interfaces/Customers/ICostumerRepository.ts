@@ -3,6 +3,7 @@ import { ICreateCustomer } from './ICreateCustomer';
 
 export interface ICostumerRepository {
     findByName(name: string): Promise<ICustomer | null>;
+    findByEmail(email: string): Promise<ICustomer | null>;
     findById(id: string): Promise<ICustomer | null>;
     findAll(): Promise<ICustomer[]>;
     create(data: ICreateCustomer): Promise<ICustomer>;

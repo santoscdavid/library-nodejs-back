@@ -10,6 +10,7 @@ class UpdatePublisherService {
         @inject('PublishersRepository')
         private publishersRepository: IPublishersRepository,
     ) {}
+
     public async execute({
         id,
         name,
@@ -18,13 +19,13 @@ class UpdatePublisherService {
         const publisher = await this.publishersRepository.findById(id);
 
         if (!publisher) {
-            throw new AppError('Product not found.');
+            throw new AppError('Publisher not found.');
         }
 
         const productExists = await this.publishersRepository.findByName(name);
 
         if (productExists && name !== publisher.name) {
-            throw new AppError('There is already one product with this name');
+            throw new AppError('There is already one publisher with this name');
         }
 
         publisher.name = name;

@@ -20,7 +20,7 @@ class CreatePublisherService {
         );
 
         if (publisherExists)
-            throw new AppError('There is already one product with this name');
+            throw new AppError('There is already one publisher with this name');
 
         const publisher = await this.publishersRepository.create({
             name,
