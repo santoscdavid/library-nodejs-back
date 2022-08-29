@@ -1,6 +1,6 @@
 import AppError from '@api/middlewares/AppError';
 import { inject, injectable } from 'tsyringe';
-import { ICostumerRepository } from '@business/interfaces/Customers/ICostumerRepository';
+import { ICustumerRepository } from '@business/interfaces/Customers/ICustumerRepository';
 import { ICustomer } from '@business/interfaces/Customers/ICustomer';
 import { ICreateCustomer } from '@business/interfaces/Customers/ICreateCustomer';
 import { hash } from 'bcryptjs';
@@ -9,7 +9,7 @@ import { hash } from 'bcryptjs';
 class CreateCustomerService {
     constructor(
         @inject('CustomerRepository')
-        private customerRepository: ICostumerRepository,
+        private customerRepository: ICustumerRepository,
     ) {}
 
     public async execute({

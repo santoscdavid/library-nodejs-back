@@ -1,12 +1,12 @@
 import { inject, injectable } from 'tsyringe';
-import { ICostumerRepository } from '@business/interfaces/Customers/ICostumerRepository';
+import { ICustumerRepository } from '@business/interfaces/Customers/ICustumerRepository';
 import { ICustomer } from '@business/interfaces/Customers/ICustomer';
 
 @injectable()
 class ListCustomerService {
     constructor(
         @inject('CustomerRepository')
-        private customerRepository: ICostumerRepository,
+        private customerRepository: ICustumerRepository,
     ) {}
 
     public async execute(): Promise<ICustomer[]> {

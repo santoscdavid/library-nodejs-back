@@ -3,10 +3,10 @@ import { Repository } from 'typeorm';
 
 import { ICustomer } from '@business/interfaces/Customers/ICustomer';
 import Customer from '@business/models/Customer';
-import { ICostumerRepository } from '@business/interfaces/Customers/ICostumerRepository';
+import { ICustumerRepository } from '@business/interfaces/Customers/ICustumerRepository';
 import { ICreateCustomer } from '@business/interfaces/Customers/ICreateCustomer';
 
-export class CustomersRepository implements ICostumerRepository {
+export class CustomersRepository implements ICustumerRepository {
     private ormRepository: Repository<Customer>;
 
     constructor() {

@@ -1,7 +1,7 @@
 import { ICustomer } from './ICustomer';
 import { ICreateCustomer } from './ICreateCustomer';
 
-export interface ICostumerRepository {
+export interface ICustumerRepository {
     findByName(name: string): Promise<ICustomer | null>;
     findByEmail(email: string): Promise<ICustomer | null>;
     findById(id: string): Promise<ICustomer | null>;

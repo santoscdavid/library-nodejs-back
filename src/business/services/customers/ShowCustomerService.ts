@@ -1,6 +1,6 @@
 import AppError from '@api/middlewares/AppError';
 import { inject, injectable } from 'tsyringe';
-import { ICostumerRepository } from '@business/interfaces/Customers/ICostumerRepository';
+import { ICustumerRepository } from '@business/interfaces/Customers/ICustumerRepository';
 import { ICustomer } from '@business/interfaces/Customers/ICustomer';
 import { IShowCustomer } from '@business/interfaces/Customers/IShowCustomer';
 
@@ -8,7 +8,7 @@ import { IShowCustomer } from '@business/interfaces/Customers/IShowCustomer';
 class ShowCustomerService {
     constructor(
         @inject('CustomersRepository')
-        private customersRepository: ICostumerRepository,
+        private customersRepository: ICustumerRepository,
     ) {}
 
     public async execute({ customer_id }: IShowCustomer): Promise<ICustomer> {
